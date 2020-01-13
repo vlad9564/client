@@ -12,8 +12,8 @@ export const Main = () => {
             <Router>
                 <Header />
                 <Switch>
-                    <Route path={["/", "/home"]} exact component={Home} />
-                    <Route path={"/admin"} exact component={Admin} />
+                    <Route path={["/client", "/client/home"]} exact component={Home} />
+                    <Route path={"/client/admin"} exact component={Admin} />
                     <Route path={"*"} component={PageNotFound} />
                 </Switch>
             </Router>
