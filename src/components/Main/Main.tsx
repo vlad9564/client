@@ -12,7 +12,7 @@ export const Main = () => {
     }
 
     let initialStateForLoggUser = false;
-    localStorage.setItem("isAuth", "1");
+    // localStorage.setItem("isAuth", "1");
     const isUserLoggedIn = localStorage.getItem('isAuth');
     if (isUserLoggedIn === "1") { initialStateForLoggUser = true }
 
