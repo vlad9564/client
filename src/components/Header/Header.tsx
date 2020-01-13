@@ -6,6 +6,8 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import { Login } from "../Login/Login"
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -21,9 +23,17 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-export function Header() {
+export function Header(props) {
     const classes = useStyles({});
-
+    const onSignOut = () => {
+        localStorage.clear();
+        debugger;
+        // props.history.push('/login');
+        // return <Login />   
+        return (
+            <Link to="/login"></Link>
+        )
+    }
     return (
         <div className={classes.root}>
             <AppBar position="static">
@@ -35,6 +45,7 @@ export function Header() {
                         Travel
                      </Typography>
                     <Button color="inherit">Help</Button>
+                    <Button color="inherit" onClick={onSignOut}>Sign Out</Button>
                 </Toolbar>
             </AppBar>
         </div>
