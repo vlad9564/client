@@ -36,7 +36,9 @@ export const Main = () => {
     }
     else {
         return (
-            <Login changeIsUserLogged={() => { handleUserLogged }}></Login>
+            <Login
+            //  changeIsUserLogged={() => { handleUserLogged }}
+            ></Login>
         )
     }
 }

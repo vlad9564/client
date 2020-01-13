@@ -30,9 +30,6 @@ export function Header(props) {
         debugger;
         // props.history.push('/login');
         // return <Login />   
-        return (
-            <Link to="/login"></Link>
-        )
     }
     return (
         <div className={classes.root}>
