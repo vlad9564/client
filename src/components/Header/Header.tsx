@@ -5,6 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
+import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions } from "@material-ui/core"
 import MenuIcon from '@material-ui/icons/Menu';
 import { Login } from "../Login/Login"
 import { Link } from "react-router-dom";
@@ -24,10 +25,24 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export function Header(props) {
+
+    const [open, setOpen] = React.useState(false);
+
+
+    const handleOpenDialog = () => {
+        setOpen(true);
+    }
+
+    const handleClose = () => {
+        setOpen(false);
+    }
+
+    debugger;
     const classes = useStyles({});
     const onSignOut = () => {
         localStorage.clear();
         debugger;
+        // window.open("/login");
         // props.history.push('/login');
         // return <Login />   
     }
@@ -38,13 +53,34 @@ export function Header(props) {
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" className={classes.title}>
-                        Travel
-                     </Typography>
-                    <Button color="inherit">Help</Button>
+                    {/* <Typography variant="h6" className={classes.title}>
+                        Apps
+                     </Typography> */}
+                    <Link className={classes.title} to="/" >Apps</Link>
+
+                    <Button color="inherit" onClick={handleOpenDialog}>Help</Button>
                     <Button color="inherit" onClick={onSignOut}>Sign Out</Button>
                 </Toolbar>
             </AppBar>
-        </div>
+            <Dialog
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+            >
+                <DialogTitle id="alert-dialog-title">{"Use Google's location service?"}</DialogTitle>
+                <DialogContent>
+                    <DialogContentText id="alert-dialog-description">
+                        Let Google help apps determine location. This means sending anonymous location data to
+                           Google, even when no apps are running.
+                        </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={handleClose} color="primary">
+                        Close
+                    </Button>
+                </DialogActions>
+            </Dialog>
+        </div >
     );
 }
