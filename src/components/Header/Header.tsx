@@ -41,11 +41,11 @@ export function Header(props) {
     debugger;
     const classes = useStyles({});
     const onSignOut = () => {
-        localStorage.clear();
-        debugger;
+        // localStorage.clear();
         // window.open("/login");
         // props.history.push('/login');
         // return <Login />   
+        window.close();
     }
     return (
         <div className={classes.root}>
