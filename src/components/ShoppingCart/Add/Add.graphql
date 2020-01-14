@@ -1,0 +1,6 @@
+mutation AddProduct($name: String!){
+    addProduct(name: $name){
+        id
+        name
+    }
+}

@@ -1,5 +1,4 @@
 import React from "react";
-import ApolloClient from "apollo-boost";
 import { ApolloProvider, useQuery, useMutation, } from "@apollo/react-hooks";
 import { loader } from 'graphql.macro';
 const query = loader("./getUsers.graphql");
