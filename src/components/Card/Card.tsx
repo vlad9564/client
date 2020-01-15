@@ -6,6 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import ShoppingCartPNG from "../../images/shcart.png";
+import TestPNG from "../../images/test.png";
 
 const useStyles = makeStyles({
     card: {
@@ -31,19 +32,36 @@ export default function SimpleCard() {
     const bull = <span className={classes.bullet}>•</span>;
 
     return (
-        <Card className={classes.card}>
-            <CardContent>
-                <Typography variant="h5" component="h2">
-                    Shop
+        <>
+            <Card className={classes.card}>
+                <CardContent>
+                    <Typography variant="h5" component="h2">
+                        Shop
         </Typography>
-                <Typography className={classes.pos} color="textSecondary">
-                    Lista de cumparaturi
+                    <Typography className={classes.pos} color="textSecondary">
+                        Lista de cumparaturi
         </Typography>
-                <img height="100px" src={ShoppingCartPNG} alt="img"></img>
-            </CardContent>
-            <CardActions>
-                <Button size="small" onClick={() => window.open("/shop", "_self")} >Open the app</Button>
-            </CardActions>
-        </Card>
+                    <img height="100px" src={ShoppingCartPNG} alt="img"></img>
+                </CardContent>
+                <CardActions>
+                    <Button size="small" onClick={() => window.open("/shop", "_self")} >Open the app</Button>
+                </CardActions>
+            </Card>
+
+            <Card className={classes.card}>
+                <CardContent>
+                    <Typography variant="h5" component="h2">
+                        Test
+                    </Typography>
+                    <Typography className={classes.pos} color="textSecondary">
+                        Test the app
+                    </Typography>
+                    <img height="100px" src={TestPNG} alt="img"></img>
+                </CardContent>
+                <CardActions>
+                    <Button size="small" onClick={() => window.open("/test", "_self")} >Open the app</Button>
+                </CardActions>
+            </Card>
+        </>
     );
 }
