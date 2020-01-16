@@ -57,8 +57,7 @@ export function Header(props) {
                     {/* <Typography variant="h6" className={classes.title}>
                         Apps
                      </Typography> */}
-                    <Link className={classes.title} to="/" >Apps</Link>
-
+                    <Button color="inherit" className={classes.title} href="/" >Apps</Button>
                     <Button color="inherit" onClick={handleOpenDialog}>Help</Button>
                     <Button color="inherit" onClick={onSignOut}>Sign Out</Button>
                 </Toolbar>

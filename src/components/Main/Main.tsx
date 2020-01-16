@@ -6,6 +6,7 @@ import { Admin } from "../Admin/Admin";
 import { PageNotFound } from "../PageNotFound/PageNotFound";
 import { Login } from "../Login/Login";
 import { ShoppingCart } from "../ShoppingCart/ShoppingCart";
+import { Test } from "../TestComp/Test";
 
 export const Main = () => {
     const handleUserLogged = () => {
@@ -25,6 +26,7 @@ export const Main = () => {
                     <Route path={["/", "/home"]} exact component={Home} />
                     <Route path={"/admin"} exact component={Admin} />
                     <Route path={"/shop"} component={ShoppingCart} />
+                    <Route path={"/test"} component={Test} />
                     <Route path={"*"} component={PageNotFound} />
 
                 </Switch>
